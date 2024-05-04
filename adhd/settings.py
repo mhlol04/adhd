@@ -224,8 +224,8 @@ SOCIAL_AUTH_APPLE_ID_SCOPE = ['email', 'name']
 SOCIAL_AUTH_USER_FIELDS = ['email', 'username', 'password']
 
 CORS_ALLOWED_ORIGINS =[
-    "https://graduate-project-zeta.vercel.app",
-    ".vercel.app"
+    "https://graduate-project-zeta.vercel.app"
+    
 ]
 
 
