@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-$r&zr64j#4x2+xbet_j(oe2us=u-hcbp0i05^@mn(*vqyn$8wf"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -224,7 +224,7 @@ SOCIAL_AUTH_APPLE_ID_SCOPE = ['email', 'name']
 SOCIAL_AUTH_USER_FIELDS = ['email', 'username', 'password']
 
 CORS_ALLOWED_ORIGINS =[
-    "https://graduate-project-zeta.vercel.app"
+    "http://127.0.0.1:8000"
     
 ]
 
