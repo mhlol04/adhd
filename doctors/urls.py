@@ -4,9 +4,9 @@ from . import views
 
 urlpatterns = [
     path('register/', views.user_register_view, name='register'),
-    path('retrieve/<str:email>/', views.UpdateDeleteRetrieveDoctorView.as_view(), name='retrieve'),
-    path('delete/<str:email>/', views.UpdateDeleteRetrieveDoctorView.as_view(), name='delete'),
-    path('update/<str:email>/', views.UpdateDeleteRetrieveDoctorView.as_view(), name='update'),
+    path('retrieve/<str:username>/', views.UpdateDeleteRetrieveDoctorView.as_view(), name='retrieve'),
+    path('delete/<str:username>/', views.UpdateDeleteRetrieveDoctorView.as_view(), name='delete'),
+    path('update/<str:username>/', views.UpdateDeleteRetrieveDoctorView.as_view(), name='update'),
     path('list/', views.ListDoctorsView.as_view(), name='list'),
     
     path('create-time-slot/', views.CreateListFreeSlot.as_view(), name='create_slot'),

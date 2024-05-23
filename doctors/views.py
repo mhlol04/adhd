@@ -64,11 +64,12 @@ def user_register_view(request):
 class UpdateDeleteRetrieveDoctorView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = DoctorRetrieveSerializer
     permission_classes = [permissions.IsAuthenticated]
-    lookup_field = "email"
+    lookup_field = "username"
 
     def get_queryset(self):
-        email = self.kwargs.get("email")
-        user = get_object_or_404(User, email=email)
+        print(self.kwargs)
+        username = self.kwargs.get("username")
+        user = get_object_or_404(User, username=username)
         if user == self.request.user or self.request.user.is_superuser:
             doctor_profile = get_object_or_404(DoctorProfile, user=user)
             # print(doctor_profile)
@@ -81,13 +82,13 @@ class UpdateDeleteRetrieveDoctorView(generics.RetrieveUpdateDestroyAPIView):
 
     def destroy(self, request, *args, **kwargs):
         instance = self.get_object()
-        user = get_object_or_404(User, email=instance.user.email)
+        user = get_object_or_404(User, username=instance.user.username)
         self.perform_destroy(user)
         return Response(status=status.HTTP_204_NO_CONTENT)
 
     def update(self, request, *args, **kwargs):
         instance = self.get_object()
-        user = get_object_or_404(User, email=instance.user.email)
+        user = get_object_or_404(User, username=instance.user.username)
         data = request.data
 
         try:
